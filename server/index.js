@@ -137,6 +137,14 @@ app.get('/orders', async (req, res) => {
 app.get('/', (req, res) => {
   res.json({ message: '🍰 CRAZY BAKERY API is running!', status: 'OK' });
 });
+const path = require('path');
+
+// Serve React frontend
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
 
 app.listen(PORT, () => {
   console.log(`🚀 Server running on http://localhost:${PORT}`);
