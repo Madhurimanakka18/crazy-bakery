@@ -1,0 +1,15 @@
+{
+  "name": "crazy-bakery",
+  "version": "1.0.0",
+  "description": "CRAZY BAKERY - Full Stack Bakery App",
+  "scripts": {
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "start": "node start.js",
+    "dev": "node start.js",
+    "server": "cd server && node index.js",
+    "client": "cd client && npm start"
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

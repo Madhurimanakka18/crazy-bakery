@@ -1,0 +1,266 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700&display=swap');
+
+/* ==============================
+   CSS VARIABLES - LIGHT THEME
+   ============================== */
+:root,
+[data-theme="light"] {
+  --bg-primary: #fdf6f0;
+  --bg-secondary: #fff8f3;
+  --bg-card: #ffffff;
+  --bg-nav: rgba(253, 246, 240, 0.95);
+  --text-primary: #2d1b0e;
+  --text-secondary: #6b4c35;
+  --text-muted: #9d7b6a;
+  --accent: #e07b39;
+  --accent-hover: #c96b2a;
+  --accent-light: #fdecd9;
+  --pink: #f4a0b5;
+  --green: #7dab8a;
+  --border: #f0ddd0;
+  --shadow: rgba(120, 70, 40, 0.1);
+  --shadow-hover: rgba(120, 70, 40, 0.2);
+  --hero-overlay: rgba(253, 246, 240, 0.6);
+  --badge-bg: #fdecd9;
+  --badge-text: #c96b2a;
+  --input-bg: #fff;
+  --input-border: #e8d5c4;
+  --footer-bg: #2d1b0e;
+  --footer-text: #f0ddd0;
+}
+
+/* ==============================
+   DARK THEME
+   ============================== */
+[data-theme="dark"] {
+  --bg-primary: #1a0f08;
+  --bg-secondary: #241408;
+  --bg-card: #2e1c0f;
+  --bg-nav: rgba(26, 15, 8, 0.97);
+  --text-primary: #f5e6d8;
+  --text-secondary: #d4a882;
+  --text-muted: #8a6550;
+  --accent: #f09050;
+  --accent-hover: #e07b39;
+  --accent-light: #3d2010;
+  --pink: #c4607a;
+  --green: #5d8b6a;
+  --border: #3d2010;
+  --shadow: rgba(0, 0, 0, 0.4);
+  --shadow-hover: rgba(0, 0, 0, 0.6);
+  --hero-overlay: rgba(26, 15, 8, 0.65);
+  --badge-bg: #3d2010;
+  --badge-text: #f09050;
+  --input-bg: #2e1c0f;
+  --input-border: #4d2c18;
+  --footer-bg: #0d0804;
+  --footer-text: #d4a882;
+}
+
+/* ==============================
+   RESET & BASE
+   ============================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  line-height: 1.6;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Playfair Display', serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ==============================
+   BUTTONS
+   ============================== */
+.btn-primary {
+  background: var(--accent);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+  background: var(--accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px var(--shadow-hover);
+}
+
+.btn-outline {
+  background: transparent;
+  color: var(--accent);
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  border: 2px solid var(--accent);
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-outline:hover {
+  background: var(--accent);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ==============================
+   PAGE HEADER
+   ============================== */
+.page-header {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: var(--bg-secondary);
+}
+
+.page-header h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+.divider {
+  width: 60px;
+  height: 4px;
+  background: var(--accent);
+  margin: 16px auto 0;
+  border-radius: 2px;
+}
+
+/* ==============================
+   CONTAINER
+   ============================== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ==============================
+   SECTION TITLE
+   ============================== */
+.section-title {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.section-title h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  color: var(--text-primary);
+  margin-bottom: 12px;
+}
+
+.section-title p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* ==============================
+   ANIMATIONS
+   ============================== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+.fade-in {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+/* ==============================
+   SCROLLBAR
+   ============================== */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-secondary); }
+::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent-hover); }
+
+/* ==============================
+   TOAST OVERRIDES
+   ============================== */
+.Toastify__toast {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 600;
+  border-radius: 12px;
+}
+
+/* ==============================
+   RESPONSIVE
+   ============================== */
+@media (max-width: 768px) {
+  .page-header {
+    padding: 40px 20px 30px;
+  }
+}
